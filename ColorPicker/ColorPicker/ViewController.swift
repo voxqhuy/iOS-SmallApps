@@ -23,5 +23,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var colorView: UIView!
     
+    @IBAction func switchChanged(_ sender: UISwitch) {
+        colorView.backgroundColor = .red
+    }
 }
 
