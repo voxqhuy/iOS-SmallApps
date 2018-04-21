@@ -31,6 +31,7 @@ class ViewController: UIViewController {
     @IBAction func switchChanged(_ sender: UISwitch) {
         // update the color
         updateColor()
+        updateControls()
     }
     
     @IBOutlet weak var redSwitch: UISwitch!
