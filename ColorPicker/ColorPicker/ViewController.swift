@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         colorView.layer.borderColor = UIColor.black.cgColor
         // set the color
         updateColor()
+        updateControls()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,10 +44,6 @@ class ViewController: UIViewController {
         var red: CGFloat = 0
         var green: CGFloat = 0
         var blue: CGFloat = 0
-        // disable, enable sliders appropriately
-        redSlider.isEnabled = redSwitch.isOn
-        greenSlider.isEnabled = greenSwitch.isOn
-        blueSlider.isEnabled = blueSwitch.isOn
         
         if redSwitch.isOn {
             red = CGFloat(redSlider.value)
@@ -63,6 +60,14 @@ class ViewController: UIViewController {
         
         
     }
+    
+    // disable, enable sliders appropriately
+    func updateControls() {
+        redSlider.isEnabled = redSwitch.isOn
+        greenSlider.isEnabled = greenSwitch.isOn
+        blueSlider.isEnabled = blueSwitch.isOn
+    }
+    
     @IBAction func sliderChanged(_ sender: UISlider) {
         // update the color
         updateColor()
@@ -85,6 +90,7 @@ class ViewController: UIViewController {
         blueSlider.setValue(1, animated: true)
         // reset the color
         updateColor()
+        updateControls()
     }
 }
 
