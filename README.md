@@ -2,7 +2,7 @@
 
 
 
-**Launch View** <img src="launch.png" width="228"> **Running View** <img src="screenshot.png" width="228">
+**Launch View** <img src="launch1.png" width="228"> **Running View** <img src="screenshot1.png" width="228">
 
 
 
