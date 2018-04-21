@@ -43,6 +43,11 @@ class ViewController: UIViewController {
         var red: CGFloat = 0
         var green: CGFloat = 0
         var blue: CGFloat = 0
+        // disable, enable sliders appropriately
+        redSlider.isEnabled = redSwitch.isOn
+        greenSlider.isEnabled = greenSwitch.isOn
+        blueSlider.isEnabled = blueSwitch.isOn
+        
         if redSwitch.isOn {
             red = CGFloat(redSlider.value)
         }
