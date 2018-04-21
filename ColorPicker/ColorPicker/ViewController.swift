@@ -41,18 +41,29 @@ class ViewController: UIViewController {
         var green: CGFloat = 0
         var blue: CGFloat = 0
         if redSwitch.isOn {
-            red = 1
+            red = CGFloat(redSlider.value)
         }
         if greenSwitch.isOn {
-            green = 1
+            green = CGFloat(greenSlider.value)
         }
         if blueSwitch.isOn {
-            blue = 1
+            blue = CGFloat(blueSlider.value)
         }
         
         let mixedColor = UIColor(red: red, green: green, blue: blue, alpha: 1)
         colorView.backgroundColor = mixedColor
         
+        
     }
+    @IBAction func sliderChanged(_ sender: UISlider) {
+        // update the color
+        updateColor()
+    }
+    
+    @IBOutlet weak var redSlider: UISlider!
+
+    @IBOutlet weak var greenSlider: UISlider!
+    
+    @IBOutlet weak var blueSlider: UISlider!
 }
 
