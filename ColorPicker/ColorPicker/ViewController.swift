@@ -65,5 +65,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     
     @IBOutlet weak var blueSlider: UISlider!
+    
+    @IBAction func Reset(_ sender: UIButton) {
+        // turn switches off
+        redSwitch.setOn(false, animated: true)
+        greenSwitch.setOn(false, animated: true)
+        blueSwitch.setOn(false, animated: true)
+        // reset sliders to 1
+        redSlider.setValue(1, animated: true)
+        greenSlider.setValue(1, animated: true)
+        blueSlider.setValue(1, animated: true)
+        // reset the color
+        updateColor()
+    }
 }
 
