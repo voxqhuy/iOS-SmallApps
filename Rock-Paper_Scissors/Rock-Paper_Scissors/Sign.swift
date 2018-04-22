@@ -7,6 +7,21 @@
 //
 
 import Foundation
+import GameplayKit
+
+let randomChoice = GKRandomDistribution(lowestValue: 0, highestValue: 2)
+
+func randomSign() -> Sign {
+    let sign = randomChoice.nextInt()
+    switch sign {
+    case 0:
+        return Sign.rock
+    case 1:
+        return Sign.paper
+    default:
+        return Sign.scissors
+    }
+}
 
 enum Sign {
     case rock, paper, scissors
