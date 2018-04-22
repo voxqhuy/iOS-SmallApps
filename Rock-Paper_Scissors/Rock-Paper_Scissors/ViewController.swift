@@ -20,6 +20,28 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBOutlet weak var botIconLabel: UIStackView!
+    
+    @IBOutlet weak var gameStatusLabel: UILabel!
+    
+    @IBOutlet weak var rockImageLabel: UIButton!
+    
+    @IBOutlet weak var paperImageLabel: UIButton!
+    
+    @IBOutlet weak var scissorsImageLabel: UIButton!
+    
+    @IBOutlet weak var playAgainLabel: UIButton!
+    
+    @IBAction func playedRock(_ sender: UIButton) {
+    }
+    
+    @IBAction func playedPaper(_ sender: UIButton) {
+    }
+    
+    @IBAction func playedScissors(_ sender: UIButton) {
+    }
+    
+    @IBAction func playAgainTapped(_ sender: UIButton) {
+    }
 }
 

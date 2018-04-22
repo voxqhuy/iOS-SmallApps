@@ -40,22 +40,34 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="96"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                                 <state key="normal" title="👊"/>
+                                                <connections>
+                                                    <action selector="playedRock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0bY-8W-qD0"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZE-hf-nLe">
                                                 <rect key="frame" x="99" y="0.0" width="75" height="96"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
-                                                <state key="normal" title="👊"/>
+                                                <state key="normal" title="✋"/>
+                                                <connections>
+                                                    <action selector="playedPaper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l3X-cN-oeL"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDZ-aZ-BZP">
                                                 <rect key="frame" x="198" y="0.0" width="75" height="96"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
-                                                <state key="normal" title="👊"/>
+                                                <state key="normal" title="✌️"/>
+                                                <connections>
+                                                    <action selector="playedScissors:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hwp-Qr-Xyz"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSf-dQ-z8Z">
                                         <rect key="frame" x="101" y="380.5" width="71" height="30"/>
                                         <state key="normal" title="Play Again"/>
+                                        <connections>
+                                            <action selector="playAgainTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sfa-rK-ShY"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -67,6 +79,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="botIconLabel" destination="KN2-NX-Ob2" id="5Ww-rj-ruq"/>
+                        <outlet property="gameStatusLabel" destination="EYV-dt-CgU" id="39e-jy-zd3"/>
+                        <outlet property="paperImageLabel" destination="tZE-hf-nLe" id="LX2-Xv-UL8"/>
+                        <outlet property="playAgainLabel" destination="dSf-dQ-z8Z" id="VgF-fB-GLR"/>
+                        <outlet property="rockImageLabel" destination="qNg-8i-1Yl" id="Boc-sd-Cy5"/>
+                        <outlet property="scissorsImageLabel" destination="yDZ-aZ-BZP" id="SBg-C2-rRP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
