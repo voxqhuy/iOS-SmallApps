@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     let elementList = ["Carbon", "Gold", "Chlorine", "Sodium"]
+
     var currentElementIndex = 0
     
     override func viewDidLoad() {
