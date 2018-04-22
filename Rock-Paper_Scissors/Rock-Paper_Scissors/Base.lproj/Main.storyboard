@@ -80,12 +80,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="botIconLabel" destination="KN2-NX-Ob2" id="5Ww-rj-ruq"/>
+                        <outlet property="botIconLabel" destination="UIm-8k-npS" id="tsv-p5-M2Y"/>
                         <outlet property="gameStatusLabel" destination="EYV-dt-CgU" id="39e-jy-zd3"/>
-                        <outlet property="paperImageLabel" destination="tZE-hf-nLe" id="LX2-Xv-UL8"/>
-                        <outlet property="playAgainLabel" destination="dSf-dQ-z8Z" id="VgF-fB-GLR"/>
-                        <outlet property="rockImageLabel" destination="qNg-8i-1Yl" id="Boc-sd-Cy5"/>
-                        <outlet property="scissorsImageLabel" destination="yDZ-aZ-BZP" id="SBg-C2-rRP"/>
+                        <outlet property="paperImageBtn" destination="tZE-hf-nLe" id="LX2-Xv-UL8"/>
+                        <outlet property="playAgainBtn" destination="dSf-dQ-z8Z" id="VgF-fB-GLR"/>
+                        <outlet property="rockImageBtn" destination="qNg-8i-1Yl" id="Boc-sd-Cy5"/>
+                        <outlet property="scissorsImageBtn" destination="yDZ-aZ-BZP" id="SBg-C2-rRP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

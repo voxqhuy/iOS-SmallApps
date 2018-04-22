@@ -15,11 +15,11 @@ func randomSign() -> Sign {
     let sign = randomChoice.nextInt()
     switch sign {
     case 0:
-        return Sign.rock
+        return .rock
     case 1:
-        return Sign.paper
+        return .paper
     default:
-        return Sign.scissors
+        return .scissors
     }
 }
 

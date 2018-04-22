@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        updateStatus(GameState.start)
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,19 +21,21 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBOutlet weak var botIconLabel: UIStackView!
+    @IBOutlet weak var botIconLabel: UILabel!
     
     @IBOutlet weak var gameStatusLabel: UILabel!
     
-    @IBOutlet weak var rockImageLabel: UIButton!
+    @IBOutlet weak var rockImageBtn: UIButton!
     
-    @IBOutlet weak var paperImageLabel: UIButton!
+    @IBOutlet weak var paperImageBtn: UIButton!
     
-    @IBOutlet weak var scissorsImageLabel: UIButton!
+    @IBOutlet weak var scissorsImageBtn: UIButton!
     
-    @IBOutlet weak var playAgainLabel: UIButton!
+    @IBOutlet weak var playAgainBtn: UIButton!
     
     @IBAction func playedRock(_ sender: UIButton) {
+        
+        updateStatus(GameState.)
     }
     
     @IBAction func playedPaper(_ sender: UIButton) {
@@ -42,6 +45,27 @@ class ViewController: UIViewController {
     }
     
     @IBAction func playAgainTapped(_ sender: UIButton) {
+        updateStatus(GameState.start)
+    }
+    
+    func updateStatus(_ gameStatus: GameState) {
+        switch gameStatus {
+        case .win:
+            view.backgroundColor = UIColor.green
+        case .draw:
+            view.backgroundColor = UIColor.darkGray
+        case .lose:
+            view.backgroundColor = UIColor.red
+        default:
+            view.backgroundColor = UIColor.clear
+            botIconLabel.text = "🤖"
+            playAgainBtn.isEnabled = false
+            rockImageBtn.isEnabled = true
+            paperImageBtn.isEnabled = true
+            scissorsImageBtn.isEnabled = true
+        }
+        gameStatusLabel.text = gameStatus.description
+        
     }
 }
 
