@@ -20,4 +20,36 @@ enum Sign {
             return "✌️"
         }
     }
+    
+    func versus(_ otherSign: Sign) -> GameState {
+        switch self {
+        case .rock:
+            switch otherSign {
+            case .rock:
+                return GameState.draw
+            case .paper:
+                return GameState.lose
+            case .scissors:
+                return GameState.win
+            }
+        case .paper:
+            switch otherSign {
+            case .rock:
+                return GameState.win
+            case .paper:
+                return GameState.draw
+            case .scissors:
+                return GameState.lose
+            }
+        case .scissors:
+            switch otherSign {
+            case .rock:
+                return GameState.lose
+            case .paper:
+                return GameState.win
+            case .scissors:
+                return GameState.draw
+            }
+        }
+    }
 }

@@ -13,6 +13,7 @@
 		8F75D904208D3DF2007FB624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F75D903208D3DF2007FB624 /* Assets.xcassets */; };
 		8F75D907208D3DF2007FB624 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F75D905208D3DF2007FB624 /* LaunchScreen.storyboard */; };
 		8F75D90F208D3E4B007FB624 /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F75D90E208D3E4B007FB624 /* Sign.swift */; };
+		8F75D911208D3FE9007FB624 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F75D910208D3FE9007FB624 /* GameState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8F75D906208D3DF2007FB624 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F75D908208D3DF2007FB624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F75D90E208D3E4B007FB624 /* Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
+		8F75D910208D3FE9007FB624 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				8F75D8FE208D3DF1007FB624 /* ViewController.swift */,
 				8F75D900208D3DF1007FB624 /* Main.storyboard */,
 				8F75D90E208D3E4B007FB624 /* Sign.swift */,
+				8F75D910208D3FE9007FB624 /* GameState.swift */,
 				8F75D903208D3DF2007FB624 /* Assets.xcassets */,
 				8F75D905208D3DF2007FB624 /* LaunchScreen.storyboard */,
 				8F75D908208D3DF2007FB624 /* Info.plist */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F75D8FF208D3DF1007FB624 /* ViewController.swift in Sources */,
+				8F75D911208D3FE9007FB624 /* GameState.swift in Sources */,
 				8F75D8FD208D3DF1007FB624 /* AppDelegate.swift in Sources */,
 				8F75D90F208D3E4B007FB624 /* Sign.swift in Sources */,
 			);
