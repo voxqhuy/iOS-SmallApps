@@ -8,7 +8,7 @@
 A Reset Button that resets the color, and disable the outlets
 
 
-<img src="launch1.png" width="228"> => interaction: <img src="screenshot1.png" width="228"> <img src="screenshot2.png" width="228">
+<img src="colorPicker1.png" width="228"> => interaction: <img src="colorPicker2.png" width="228"> <img src="colorPicker3.png" width="228">
 
 
 
