@@ -9,6 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let meowSound = SimpleSound(named: "meow")
+    let woofSound = SimpleSound(named: "woof")
+    let mooSound = SimpleSound(named: "moo")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,18 +28,21 @@ class ViewController: UIViewController {
     
     @IBAction func catButtonTapped(_ sender: UIButton) {
         updateSound("Meow!")
+        meowSound.play()
     }
     
     @IBAction func dogButtonTapped(_ sender: UIButton) {
         updateSound("Woof!")
+        woofSound.play()
     }
     
     @IBAction func cowButtonTapped(_ sender: UIButton) {
         updateSound("Moo!")
+        mooSound.play()
     }
     
-    func updateSound(_ sound: String) {
-        animalSoundLabel.text = sound
+    func updateSound(_ text: String) {
+        animalSoundLabel.text = text
     }
 }
 
