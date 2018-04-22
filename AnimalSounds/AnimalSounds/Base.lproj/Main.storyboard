@@ -34,16 +34,25 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="77" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="72"/>
                                                 <state key="normal" title="🐱"/>
+                                                <connections>
+                                                    <action selector="catButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aRg-6r-1zW"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsK-L2-s9Q">
                                                 <rect key="frame" x="95" y="0.0" width="77" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="72"/>
                                                 <state key="normal" title="🐶"/>
+                                                <connections>
+                                                    <action selector="dogButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tYP-Gn-VCC"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lg1-rZ-mTd">
                                                 <rect key="frame" x="190" y="0.0" width="77" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="72"/>
                                                 <state key="normal" title="🐮"/>
+                                                <connections>
+                                                    <action selector="cowButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="355-7L-QxS"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -63,6 +72,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="animalSoundLabel" destination="qja-qZ-rIx" id="1j8-V1-qX8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
