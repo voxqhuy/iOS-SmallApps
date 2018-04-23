@@ -39,6 +39,7 @@ class ViewController: UIViewController {
     
     @IBAction func signTapped(_ sender: UIButton) {
         let senderTag = sender.tag
+        print(senderTag)
         let tappedSign = Sign(rawValue: senderTag)
         play(playedSign: tappedSign!, playedBtn: senderTag)
         
@@ -57,7 +58,7 @@ class ViewController: UIViewController {
         case .lose:
             view.backgroundColor = UIColor.red
         default:
-            view.backgroundColor = UIColor.clear
+            view.backgroundColor = UIColor.lightGray
             botIconLabel.text = "🤖"
             playAgainBtn.isHidden = true
             for button in signButtons {
@@ -79,7 +80,7 @@ class ViewController: UIViewController {
         }
         let botSign = randomSign()
         let gameStatus = playedSign.versus(botSign)
-        gameStatusLabel.text = botSign.emoji
+        botIconLabel.text = botSign.emoji
         playAgainBtn.isHidden = false
         updateStatus(gameStatus)
     }

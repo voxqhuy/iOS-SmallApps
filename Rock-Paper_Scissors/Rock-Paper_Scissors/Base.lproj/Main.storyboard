@@ -44,7 +44,7 @@
                                                     <action selector="signTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ywn-93-cys"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZE-hf-nLe">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZE-hf-nLe">
                                                 <rect key="frame" x="99" y="0.0" width="75" height="96"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                                 <state key="normal" title="✋"/>
@@ -52,7 +52,7 @@
                                                     <action selector="signTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c5I-WN-2d1"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDZ-aZ-BZP">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDZ-aZ-BZP">
                                                 <rect key="frame" x="198" y="0.0" width="75" height="96"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                                 <state key="normal" title="✌️"/>
