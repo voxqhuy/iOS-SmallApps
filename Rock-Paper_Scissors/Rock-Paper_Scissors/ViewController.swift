@@ -9,18 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        updateStatus(GameState.start)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
+    var signButtons = [UIButton]()
+    
     @IBOutlet weak var botIconLabel: UILabel!
     
     @IBOutlet weak var gameStatusLabel: UILabel!
@@ -32,16 +23,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var scissorsImageBtn: UIButton!
     
     @IBOutlet weak var playAgainBtn: UIButton!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        signButtons = [rockImageBtn, paperImageBtn, scissorsImageBtn]
+        updateStatus(GameState.start)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
-    @IBAction func playedRock(_ sender: UIButton) {
+    
+    @IBAction func signTapped(_ sender: UIButton) {
+        let senderTag = sender.tag
+        let tappedSign = Sign(rawValue: senderTag)
+        play(playedSign: tappedSign!, playedBtn: senderTag)
         
-        updateStatus(GameState.)
-    }
-    
-    @IBAction func playedPaper(_ sender: UIButton) {
-    }
-    
-    @IBAction func playedScissors(_ sender: UIButton) {
     }
     
     @IBAction func playAgainTapped(_ sender: UIButton) {
@@ -59,13 +59,29 @@ class ViewController: UIViewController {
         default:
             view.backgroundColor = UIColor.clear
             botIconLabel.text = "🤖"
-            playAgainBtn.isEnabled = false
-            rockImageBtn.isEnabled = true
-            paperImageBtn.isEnabled = true
-            scissorsImageBtn.isEnabled = true
+            playAgainBtn.isHidden = true
+            for button in signButtons {
+                button.isHidden = false
+                button.isEnabled = true
+            }
         }
         gameStatusLabel.text = gameStatus.description
         
+    }
+    
+    func play(playedSign: Sign, playedBtn: Int) {
+        for button in signButtons {
+            if button != signButtons[playedBtn] {
+                button.isHidden = true
+            } else {
+                button.isEnabled = false
+            }
+        }
+        let botSign = randomSign()
+        let gameStatus = playedSign.versus(botSign)
+        gameStatusLabel.text = botSign.emoji
+        playAgainBtn.isHidden = false
+        updateStatus(gameStatus)
     }
 }
 

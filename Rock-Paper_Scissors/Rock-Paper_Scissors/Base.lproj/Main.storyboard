@@ -41,7 +41,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                                 <state key="normal" title="👊"/>
                                                 <connections>
-                                                    <action selector="playedRock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0bY-8W-qD0"/>
+                                                    <action selector="signTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ywn-93-cys"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZE-hf-nLe">
@@ -49,7 +49,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                                 <state key="normal" title="✋"/>
                                                 <connections>
-                                                    <action selector="playedPaper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l3X-cN-oeL"/>
+                                                    <action selector="signTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c5I-WN-2d1"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDZ-aZ-BZP">
@@ -57,7 +57,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                                 <state key="normal" title="✌️"/>
                                                 <connections>
-                                                    <action selector="playedScissors:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hwp-Qr-Xyz"/>
+                                                    <action selector="signTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uAR-G7-7zR"/>
                                                 </connections>
                                             </button>
                                         </subviews>

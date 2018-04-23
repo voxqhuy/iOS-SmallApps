@@ -23,8 +23,10 @@ func randomSign() -> Sign {
     }
 }
 
-enum Sign {
-    case rock, paper, scissors
+enum Sign: Int {
+    case rock = 0
+    case paper = 1
+    case scissors = 2
     var emoji: String {
         switch self {
         case .rock:
