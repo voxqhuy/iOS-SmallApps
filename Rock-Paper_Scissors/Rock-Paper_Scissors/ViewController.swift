@@ -52,11 +52,11 @@ class ViewController: UIViewController {
     func updateStatus(_ gameStatus: GameState) {
         switch gameStatus {
         case .win:
-            view.backgroundColor = UIColor(red: 237.0/255.0, green: 131.0/255.0, blue: 124.0/255.0, alpha: 1)
-        case .draw:
-            view.backgroundColor = UIColor.darkGray
-        case .lose:
             view.backgroundColor = UIColor(red: 167.0/255.0, green: 220.0/255.0, blue: 151.0/255.0, alpha: 1)
+        case .draw:
+            view.backgroundColor = UIColor.yellow
+        case .lose:
+            view.backgroundColor = UIColor(red: 237.0/255.0, green: 131.0/255.0, blue: 124.0/255.0, alpha: 1)
         default:
             view.backgroundColor = UIColor.lightGray
             botIconLabel.text = "🤖"
