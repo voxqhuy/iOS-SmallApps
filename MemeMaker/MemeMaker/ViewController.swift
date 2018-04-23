@@ -9,10 +9,43 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let topChoices = [
+        CaptionOption(emoji: "🕶", caption: "You know whats cool?"),
+        CaptionOption(emoji: "😡", caption: "You know what makes me mad?"),
+        CaptionOption(emoji: "💕", caption: "You know what I love?")
+    ]
+    
+    let bottomChoices = [
+        CaptionOption(emoji: "😾", caption: "Cats wearing hats"),
+        CaptionOption(emoji: "🐶", caption: "Dogs carrying logs"),
+        CaptionOption(emoji: "🙈", caption: "Monkeys being funky")
+    ]
 
+    @IBOutlet weak var topCaptionSegmentedControl: UISegmentedControl!
+    
+    @IBOutlet weak var bottomCaptionSegmentedControl: UISegmentedControl!
+    
+    @IBOutlet weak var topCaptionLabel: UILabel!
+    
+    @IBOutlet weak var bottomCaptionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // setting the segments
+        topCaptionSegmentedControl.removeAllSegments()
+        for choice in topChoices {
+            topCaptionSegmentedControl.insertSegment(withTitle: choice.emoji, at: topChoices.count, animated: false)
+        }
+        // choose the defaultly selected index
+        topCaptionSegmentedControl.selectedSegmentIndex = 0
+        
+        bottomCaptionSegmentedControl.removeAllSegments()
+        for choice in bottomChoices {
+            bottomCaptionSegmentedControl.insertSegment(withTitle: choice.emoji, at: bottomChoices.count, animated: false)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +53,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func segmentTapped(_ sender: UISegmentedControl) {
+    }
+    
 }
 
