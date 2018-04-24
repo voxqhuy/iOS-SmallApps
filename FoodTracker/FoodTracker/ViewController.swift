@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: Properties
     @IBOutlet weak var mealNameLabel: UILabel!
@@ -41,6 +41,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Actions
     @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
+        // make sure that the keyboard is hidden
+        mealNameField.resignFirstResponder()
+        // UIImagePickerController is a view controller that lets a user pick media from their photo library.
+        let imagePickerController = UIImagePickerController()
+        // Allow photos to be picked from the library (not taken from the camera)
+        imagePickerController.sourceType = .photoLibrary
     }
     
     @IBAction func setDefaultLabelText(_ sender: UIButton) {
