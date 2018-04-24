@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WPp-jb-3Ry">
-                                <rect key="frame" x="0.0" y="63.999999999999993" width="375" height="96.333333333333314"/>
+                                <rect key="frame" x="0.0" y="63.999999999999972" width="375" height="424.33333333333326"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLX-7b-5sq">
                                         <rect key="frame" x="0.0" y="0.0" width="86.333333333333329" height="20.333333333333332"/>
@@ -40,6 +41,12 @@
                                             <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JLR-r2-qwI"/>
                                         </connections>
                                     </button>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="meal" translatesAutoresizingMaskIntoConstraints="NO" id="njY-To-kxu">
+                                        <rect key="frame" x="0.0" y="104.33333333333337" width="320" height="320"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="njY-To-kxu" secondAttribute="height" multiplier="1:1" id="cEc-jb-iAY"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="LQ6-FK-diQ" secondAttribute="trailing" id="Nvz-mC-pDF"/>
@@ -60,6 +67,7 @@
                     <connections>
                         <outlet property="mealNameField" destination="LQ6-FK-diQ" id="BbI-Rs-8KP"/>
                         <outlet property="mealNameLabel" destination="cLX-7b-5sq" id="Lp0-y4-O7F"/>
+                        <outlet property="photoImageView" destination="njY-To-kxu" id="tZS-6O-yim"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -67,4 +75,7 @@
             <point key="canvasLocation" x="117.59999999999999" y="118.96551724137932"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="meal" width="540" height="540"/>
+    </resources>
 </document>

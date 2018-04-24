@@ -12,8 +12,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Properties
     @IBOutlet weak var mealNameLabel: UILabel!
-    
     @IBOutlet weak var mealNameField: UITextField!
+    @IBOutlet weak var photoImageView: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Hide the keyboard
         textField.resignFirstResponder()
         return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        // update the mean name text
+        mealNameLabel.text = textField.text
     }
     
     // MARK: Actions
