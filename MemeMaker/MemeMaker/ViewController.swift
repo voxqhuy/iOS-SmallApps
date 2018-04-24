@@ -46,6 +46,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func segmentTapped(_ sender: UISegmentedControl) {
+        updateCaption()
     }
     
     func resetSegment() {
