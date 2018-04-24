@@ -36,21 +36,31 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CvE-ve-LaC">
                                         <rect key="frame" x="0.0" y="66.333333333333343" width="151" height="30"/>
                                         <state key="normal" title="Set Default Label Text"/>
+                                        <connections>
+                                            <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JLR-r2-qwI"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="LQ6-FK-diQ" secondAttribute="trailing" id="dSU-2k-0oG"/>
+                                    <constraint firstAttribute="trailing" secondItem="LQ6-FK-diQ" secondAttribute="trailing" id="Nvz-mC-pDF"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="WPp-jb-3Ry" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="4fC-4g-xni"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WPp-jb-3Ry" secondAttribute="trailing" id="H9t-EG-Dbx"/>
+                            <constraint firstItem="WPp-jb-3Ry" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KKZ-Fn-bVS"/>
                             <constraint firstItem="WPp-jb-3Ry" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dAi-jl-9P7"/>
                             <constraint firstItem="WPp-jb-3Ry" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="l0G-is-REX"/>
+                            <constraint firstItem="WPp-jb-3Ry" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ldX-AW-hsm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="mealNameField" destination="LQ6-FK-diQ" id="BbI-Rs-8KP"/>
+                        <outlet property="mealNameLabel" destination="cLX-7b-5sq" id="Lp0-y4-O7F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
