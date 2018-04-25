@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var mealNameLabel: UILabel!
     @IBOutlet weak var mealNameField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var ratingControl: RatingControl!
     
     
     override func viewDidLoad() {
@@ -75,10 +76,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         // executed on 'self' object. It asks ViewController to present the view controller defined by 'imagePickerController'
         // completion: execute after the 'present' method completes
         present(imagePickerController, animated: true, completion: nil)
-    }
-    
-    @IBAction func setDefaultLabelText(_ sender: UIButton) {
-        mealNameLabel.text = "Default Text"
     }
     
 }
