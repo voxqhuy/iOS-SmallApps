@@ -42,7 +42,7 @@
                                         </connections>
                                     </button>
                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="meal" translatesAutoresizingMaskIntoConstraints="NO" id="njY-To-kxu">
-                                        <rect key="frame" x="0.0" y="104.33333333333337" width="320" height="320"/>
+                                        <rect key="frame" x="0.0" y="104.33333333333337" width="320.66666666666669" height="320"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="njY-To-kxu" secondAttribute="height" multiplier="1:1" id="cEc-jb-iAY"/>

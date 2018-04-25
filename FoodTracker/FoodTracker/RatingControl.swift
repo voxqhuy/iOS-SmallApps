@@ -12,8 +12,17 @@ import UIKit
     
     // MARK: Properties
     private var ratingButtons = [UIButton]()
-
     var rating = 0
+    @IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0) {
+        didSet {
+            setupButtons()
+        }
+    }
+    @IBInspectable var starCount: Int = 5 {
+        didSet {
+            setupButtons()
+        }
+    }
     
     // MARK: Initialization
     
@@ -31,14 +40,21 @@ import UIKit
     
     private func setupButtons() {
         
-        for _ in 0..<5 {
+        // clear existing buttons
+        for button in ratingButtons {
+            removeArrangedSubview(button)
+            button.removeFromSuperview()
+        }
+        ratingButtons.removeAll()
+        
+        for _ in 0..<starCount {
             // Create the button
             let button = UIButton()
             button.backgroundColor = UIColor.red
             // Add constraints
             button.translatesAutoresizingMaskIntoConstraints = false // disable automatically generated constraints
-            button.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
-            button.widthAnchor.constraint(equalToConstant: 44.0).isActive = true
+            button.heightAnchor.constraint(equalToConstant: starSize.height).isActive = true
+            button.widthAnchor.constraint(equalToConstant: starSize.width).isActive = true
             
             // Setup the button action
             button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(button:)), for: .touchUpInside)
