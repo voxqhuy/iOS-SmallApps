@@ -52,7 +52,8 @@ import UIKit
         ratingButtons.removeAll()
         
         // Load Button Images
-        let bundle = Bundle(for: type(of: self))
+        // the assets catalog is located in the app’s main bundle
+        let bundle = Bundle(for: type(of: self)) //
         let filledStar = UIImage(named: "filledStar", in: bundle, compatibleWith: self.traitCollection)
         let emptyStar = UIImage(named: "emptyStar", in: bundle, compatibleWith: self.traitCollection)
         let highlightedStar = UIImage(named: "highlightedStar", in: bundle, compatibleWith: self.traitCollection)
