@@ -32,7 +32,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0JK-Ev-Lxw">
-                                            <rect key="frame" x="98" y="11" width="261" height="21"/>
+                                            <rect key="frame" x="98" y="6" width="261" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -44,6 +44,11 @@
                                         </stackView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="0JK-Ev-Lxw" id="yla-eJ-re1"/>
+                                    <outlet property="photoImageView" destination="oBA-Ef-6nx" id="wAs-en-Gwf"/>
+                                    <outlet property="ratingControl" destination="7Sg-i9-2SU" id="o9e-Zp-ncr"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -80,7 +85,7 @@
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="meal" translatesAutoresizingMaskIntoConstraints="NO" id="njY-To-kxu">
-                                        <rect key="frame" x="27.333333333333343" y="66.333333333333343" width="320.66666666666663" height="320"/>
+                                        <rect key="frame" x="27.666666666666657" y="66.333333333333343" width="320" height="320"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="njY-To-kxu" secondAttribute="height" multiplier="1:1" id="cEc-jb-iAY"/>
