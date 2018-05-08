@@ -116,16 +116,26 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Meal" id="8lq-IW-YIx">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="jks-xK-rzH"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="GzL-YG-MyU"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="jks-xK-rzH">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="6Za-Gu-Qjk"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="GzL-YG-MyU">
+                            <connections>
+                                <segue destination="skw-yX-yYF" kind="unwind" unwindAction="unwindToMealListWithSender:" id="247-YU-xyb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mealNameField" destination="LQ6-FK-diQ" id="BbI-Rs-8KP"/>
                         <outlet property="photoImageView" destination="njY-To-kxu" id="tZS-6O-yim"/>
                         <outlet property="ratingControl" destination="7Q0-oi-E6p" id="Z2C-sN-NA9"/>
+                        <outlet property="saveButton" destination="GzL-YG-MyU" id="ecE-23-CSa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="skw-yX-yYF" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="GJM-6I-RMW">
                     <connections>
                         <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="Had-Qo-kIU"/>
