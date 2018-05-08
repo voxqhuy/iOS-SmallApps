@@ -9,15 +9,16 @@
 import UIKit
 
 class MealTableViewController: UITableViewController {
+    
+    //MARK: Properties
+    
+    var meals = [Meal]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // Load the sample data.
+        loadSampleMeals()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,16 +29,14 @@ class MealTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return meals.count
     }
 
-    /*
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
@@ -45,7 +44,6 @@ class MealTableViewController: UITableViewController {
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -91,5 +89,26 @@ class MealTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    //MARK: Private Methods
+    
+    private func loadSampleMeals() {
+        let beefPhoto = UIImage(named: "beef")
+        let saladPhoto = UIImage(named: "salad")
+        let spaghettiPhoto = UIImage(named: "spaghetti")
+        
+        guard let beefMeal = Meal(name: "Beef and Potatoes", photo: beefPhoto, rating: 5) else {
+                fatalError("Unable to instantiate the beef meal")
+        }
+        
+        
+        guard let saladMeal = Meal(name: "Caprese Salad", photo: saladPhoto, rating: 4) else {
+            fatalError("Unable to instantiate salad meal")
+        }
+        
+        guard let spaghettiMeal = Meal(name: "Pasta with Meatballs", photo: spaghettiPhoto, rating: 3) else {
+            fatalError("Unable to instantiate spaghetti meal")
+        }
+        
+        meals += [beefMeal, saladMeal, spaghettiMeal]
+    }
 }
