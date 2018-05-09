@@ -10,20 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Conversion View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Temperature_Conversion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ConversionViewController" customModule="Temperature_Conversion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="212" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxy-bY-bss">
-                                <rect key="frame" x="132" y="28" width="111" height="84"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
-                                <color key="textColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPE-xz-tXb">
                                 <rect key="frame" x="129" y="222" width="117" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
@@ -31,41 +25,65 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Fahrenheit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FtF-as-E7g">
-                                <rect key="frame" x="39.5" y="120" width="296" height="43"/>
+                                <rect key="frame" x="40" y="120" width="296" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Celsius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBk-t6-OJu">
-                                <rect key="frame" x="64.5" y="314" width="246" height="43"/>
+                                <rect key="frame" x="65" y="314" width="246" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="is really" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nr-El-KPQ">
-                                <rect key="frame" x="130.5" y="171" width="114" height="43"/>
+                                <rect key="frame" x="131" y="171" width="114" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="value" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v7w-wD-blN">
+                                <rect key="frame" x="63" y="28" width="250" height="84"/>
+                                <color key="textColor" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="fahrenheitFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="t54-Ng-Utf"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="38b-jA-WME"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.95686274509803915" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="UBk-t6-OJu" firstAttribute="centerX" secondItem="FtF-as-E7g" secondAttribute="centerX" id="6Ml-1I-DPV"/>
-                            <constraint firstItem="JPE-xz-tXb" firstAttribute="top" secondItem="7nr-El-KPQ" secondAttribute="bottom" constant="8" id="B02-AM-LVd"/>
-                            <constraint firstItem="JPE-xz-tXb" firstAttribute="centerX" secondItem="FtF-as-E7g" secondAttribute="centerX" id="Ice-Pp-U4r"/>
-                            <constraint firstItem="FtF-as-E7g" firstAttribute="top" secondItem="sxy-bY-bss" secondAttribute="bottom" constant="8" id="Osw-6L-gC7"/>
-                            <constraint firstItem="sxy-bY-bss" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zls-3H-B4L"/>
-                            <constraint firstItem="sxy-bY-bss" firstAttribute="centerX" secondItem="FtF-as-E7g" secondAttribute="centerX" id="cws-Rh-gT2"/>
-                            <constraint firstItem="7nr-El-KPQ" firstAttribute="top" secondItem="FtF-as-E7g" secondAttribute="bottom" constant="8" id="dRw-ko-vLQ"/>
-                            <constraint firstItem="7nr-El-KPQ" firstAttribute="centerX" secondItem="FtF-as-E7g" secondAttribute="centerX" id="iJc-ga-h9U"/>
-                            <constraint firstItem="UBk-t6-OJu" firstAttribute="top" secondItem="JPE-xz-tXb" secondAttribute="bottom" constant="8" id="nZO-jM-DvS"/>
-                            <constraint firstItem="sxy-bY-bss" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="tNk-ok-JKa"/>
+                            <constraint firstItem="v7w-wD-blN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="0a9-4A-Ue0"/>
+                            <constraint firstItem="v7w-wD-blN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="63" id="CVs-BI-laI"/>
+                            <constraint firstItem="v7w-wD-blN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QoE-43-c8B"/>
+                            <constraint firstItem="FtF-as-E7g" firstAttribute="top" secondItem="v7w-wD-blN" secondAttribute="bottom" constant="8" symbolic="YES" id="U1P-gu-xju"/>
+                            <constraint firstItem="7nr-El-KPQ" firstAttribute="centerX" secondItem="JPE-xz-tXb" secondAttribute="centerX" id="Vhn-cI-10e"/>
+                            <constraint firstItem="JPE-xz-tXb" firstAttribute="top" secondItem="7nr-El-KPQ" secondAttribute="bottom" constant="8" symbolic="YES" id="ayf-cW-GFU"/>
+                            <constraint firstItem="FtF-as-E7g" firstAttribute="centerX" secondItem="7nr-El-KPQ" secondAttribute="centerX" id="e6i-GZ-aNp"/>
+                            <constraint firstItem="UBk-t6-OJu" firstAttribute="top" secondItem="JPE-xz-tXb" secondAttribute="bottom" constant="8" symbolic="YES" id="n2a-ib-5m0"/>
+                            <constraint firstItem="v7w-wD-blN" firstAttribute="centerX" secondItem="FtF-as-E7g" secondAttribute="centerX" id="n2v-RZ-KbU"/>
+                            <constraint firstItem="JPE-xz-tXb" firstAttribute="centerX" secondItem="UBk-t6-OJu" secondAttribute="centerX" id="za7-JA-Mhs"/>
+                            <constraint firstItem="7nr-El-KPQ" firstAttribute="top" secondItem="FtF-as-E7g" secondAttribute="bottom" constant="8" symbolic="YES" id="zt4-zw-meN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="TOk-sU-4xm" appends="YES" id="Aj0-nK-eex"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="celsiusLabel" destination="JPE-xz-tXb" id="T8g-AG-W1p"/>
+                        <outlet property="userInputField" destination="v7w-wD-blN" id="HIi-z0-h2F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="TOk-sU-4xm">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="Fon-4n-raX"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="92.203898050974516"/>
         </scene>
