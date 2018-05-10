@@ -15,13 +15,17 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     var mapView: MKMapView!
     var userLocationBtn: UIButton!
     var locationManager: CLLocationManager?
-    let artwork = Artwork(title: "My hometown", locationName: "Vinh city", discipline: "City", coordinate: CLLocationCoordinate2D(latitude: 18.6796, longitude: 105.6813))
+    let vinhAnnotation = Artwork(title: "My hometown", locationName: "Vinh city", discipline: "City", coordinate: CLLocationCoordinate2D(latitude: 18.6796, longitude: 105.6813))
+    let phuketAnnotation = Artwork(title: "A place I visitted", locationName: "Phuket Island", discipline: "Island", coordinate: CLLocationCoordinate2D(latitude: 7.9519, longitude: 98.3381))
+    let sauAnnotation = Artwork(title: "My workplace", locationName: "Collegedale city", discipline: "Work", coordinate: CLLocationCoordinate2D(latitude: 35.0531, longitude: -85.0502))
     
     override func loadView() {
         // Create a map view
         mapView = MKMapView()
         mapView.delegate = self
-        mapView.addAnnotation(artwork)
+        mapView.addAnnotation(vinhAnnotation)
+        mapView.addAnnotation(phuketAnnotation)
+        mapView.addAnnotation(sauAnnotation)
         locationManager = CLLocationManager()
         
         // Set it as the view of this view controller
