@@ -92,10 +92,6 @@
         <scene sceneID="LqS-Z3-5ml">
             <objects>
                 <viewController id="uIk-TL-0h5" customClass="MapViewController" customModule="Temperature_Conversion" customModuleProvider="target" sceneMemberID="viewController">
-                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="YSy-tZ-hoC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </mapView>
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="mH8-iC-Hhz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YwP-Er-slg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -108,6 +104,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="afP-I8-try" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iwd-Pd-u90">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
