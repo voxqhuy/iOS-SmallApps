@@ -15,11 +15,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     var mapView: MKMapView!
     var userLocationBtn: UIButton!
     var locationManager: CLLocationManager?
+    let artwork = Artwork(title: "My hometown", locationName: "Vinh city", discipline: "City", coordinate: CLLocationCoordinate2D(latitude: 18.6796, longitude: 105.6813))
     
     override func loadView() {
         // Create a map view
         mapView = MKMapView()
         mapView.delegate = self
+        mapView.addAnnotation(artwork)
         locationManager = CLLocationManager()
         
         // Set it as the view of this view controller
@@ -94,5 +96,31 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         let zoomedInCurrentLocation = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 500, 500)
         mapView.setRegion(zoomedInCurrentLocation, animated: true)
+    }
+}
+
+extension MapViewController {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard let annotation = annotation as? Artwork else { return nil }
+        // when we dequeue a reusable annotation, give it an identifier
+        // if we have multiple styles of annotations, we should have a unique identifer for each one
+        // this prevents unexpected behavior if we mistakenly dequeue an identifer of a deifferent type. SAME IDEA for tableView
+        let identifier = "marker"
+        var view: MKMarkerAnnotationView
+        // a map view reuses annotation views that are no longer visible. SAME for tableView
+        // check to see if a reusable annotation view is available
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView {
+            dequeuedView.annotation = annotation
+            view = dequeuedView
+        } else {
+            // no reusable annotaion is avaiable, creating a new one
+            view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            // the view is able to display extra information
+            view.canShowCallout = true
+            // the offset at which to call out the bubble
+            view.calloutOffset = CGPoint(x: 0, y: 20)
+            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        }
+        return view
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8F01D09E20A49225004887B6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F01D09D20A49225004887B6 /* WebViewController.swift */; };
+		8F01D0A020A4AC30004887B6 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F01D09F20A4AC30004887B6 /* Artwork.swift */; };
 		8FBA21FB20A38406001B8B67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA21FA20A38406001B8B67 /* AppDelegate.swift */; };
 		8FBA220020A38406001B8B67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FBA21FE20A38406001B8B67 /* Main.storyboard */; };
 		8FBA220220A38407001B8B67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FBA220120A38407001B8B67 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		8F01D09D20A49225004887B6 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		8F01D09F20A4AC30004887B6 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		8FBA21F720A38406001B8B67 /* Temperature-Conversion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Temperature-Conversion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FBA21FA20A38406001B8B67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FBA21FF20A38406001B8B67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				8FBA222D20A3D192001B8B67 /* MapViewController.swift */,
 				8F01D09D20A49225004887B6 /* WebViewController.swift */,
 				8FBA21FA20A38406001B8B67 /* AppDelegate.swift */,
+				8F01D09F20A4AC30004887B6 /* Artwork.swift */,
 				8FBA21FE20A38406001B8B67 /* Main.storyboard */,
 				8FBA220120A38407001B8B67 /* Assets.xcassets */,
 				8FBA220320A38407001B8B67 /* LaunchScreen.storyboard */,
@@ -274,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F01D0A020A4AC30004887B6 /* Artwork.swift in Sources */,
 				8FBA222920A3A2D4001B8B67 /* ConversionViewController.swift in Sources */,
 				8FBA222E20A3D192001B8B67 /* MapViewController.swift in Sources */,
 				8FBA21FB20A38406001B8B67 /* AppDelegate.swift in Sources */,
