@@ -91,7 +91,7 @@
         <!--Map-->
         <scene sceneID="LqS-Z3-5ml">
             <objects>
-                <viewController id="uIk-TL-0h5" sceneMemberID="viewController">
+                <viewController id="uIk-TL-0h5" customClass="MapViewController" customModule="Temperature_Conversion" customModuleProvider="target" sceneMemberID="viewController">
                     <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="YSy-tZ-hoC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

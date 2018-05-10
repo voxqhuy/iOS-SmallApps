@@ -33,11 +33,24 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         nf.maximumFractionDigits = 1
         return nf
     }()
+    // time for noon
+    let noon = Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: Date())!
+    
+    // built-in functions
+    override func viewWillAppear(_ animated: Bool) {
+        let now = Date()
+        if now >= noon {
+            view.backgroundColor = UIColor.darkGray
+        } else {
+            view.backgroundColor = UIColor.lightGray
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         updateCelsiusLabel()
+        print("running conversion")
     }
     
     // MARK: UITextFieldDelegate
