@@ -55,6 +55,7 @@
 		8FBA222820A3A2D4001B8B67 /* ConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewController.swift; sourceTree = "<group>"; };
 		8FBA222B20A3CAA6001B8B67 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8FBA222D20A3D192001B8B67 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		8FD00EDC20A4D6F300D1BDB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,6 +322,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8FBA21FF20A38406001B8B67 /* Base */,
+				8FD00EDC20A4D6F300D1BDB4 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
