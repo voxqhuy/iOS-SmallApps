@@ -34,15 +34,15 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         return nf
     }()
     // time for noon
-    let noon = Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: Date())!
+//    let noon = Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: Date())!
     
     // built-in functions
     override func viewWillAppear(_ animated: Bool) {
-        let now = Date()
-        if now >= noon {
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        if hour >= 17 || hour <= 6 {
             view.backgroundColor = UIColor.darkGray
-        } else {
-            view.backgroundColor = UIColor.lightGray
         }
     }
     
