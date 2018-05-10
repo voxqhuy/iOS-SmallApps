@@ -14,6 +14,7 @@
 		8FBA221020A38407001B8B67 /* Temperature_ConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA220F20A38407001B8B67 /* Temperature_ConversionTests.swift */; };
 		8FBA221B20A38407001B8B67 /* Temperature_ConversionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA221A20A38407001B8B67 /* Temperature_ConversionUITests.swift */; };
 		8FBA222920A3A2D4001B8B67 /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBA222820A3A2D4001B8B67 /* ConversionViewController.swift */; };
+		8FBA222C20A3CAA6001B8B67 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FBA222B20A3CAA6001B8B67 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		8FBA221A20A38407001B8B67 /* Temperature_ConversionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature_ConversionUITests.swift; sourceTree = "<group>"; };
 		8FBA221C20A38407001B8B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FBA222820A3A2D4001B8B67 /* ConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewController.swift; sourceTree = "<group>"; };
+		8FBA222B20A3CAA6001B8B67 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FBA222C20A3CAA6001B8B67 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +84,7 @@
 				8FBA220E20A38407001B8B67 /* Temperature-ConversionTests */,
 				8FBA221920A38407001B8B67 /* Temperature-ConversionUITests */,
 				8FBA21F820A38406001B8B67 /* Products */,
+				8FBA222A20A3CAA5001B8B67 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +127,14 @@
 				8FBA221C20A38407001B8B67 /* Info.plist */,
 			);
 			path = "Temperature-ConversionUITests";
+			sourceTree = "<group>";
+		};
+		8FBA222A20A3CAA5001B8B67 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8FBA222B20A3CAA6001B8B67 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
