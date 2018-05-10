@@ -55,7 +55,6 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         } else {
             return true
         }
-        // test
     }
     
     // MARK: Actions
