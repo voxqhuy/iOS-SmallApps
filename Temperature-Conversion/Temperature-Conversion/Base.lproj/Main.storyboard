@@ -98,7 +98,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="utH-Ya-pNK"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Website" id="7Oc-8R-ND9"/>
+                    <tabBarItem key="tabBarItem" title="Website" image="earth-america-7" selectedImage="earth-america-7" id="7Oc-8R-ND9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="viB-c6-ZUJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -138,5 +138,6 @@
     <resources>
         <image name="ConvertIcon" width="48" height="32"/>
         <image name="MapIcon" width="48" height="32"/>
+        <image name="earth-america-7" width="30" height="30"/>
     </resources>
 </document>
