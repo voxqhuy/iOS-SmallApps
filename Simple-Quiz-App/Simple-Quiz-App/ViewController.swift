@@ -9,7 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet var questionLabel: UILabel!
+    @IBOutlet var currentQuestionLabel: UILabel!
+    @IBOutlet var nextQuestionLabel: UILabel!
     @IBOutlet var answerLabel: UILabel!
     
     // MARK: Properties
@@ -19,20 +20,28 @@ class ViewController: UIViewController {
         "What is the capitak if Vermont?",
         "What is cognac made from?"
     ]
-    
     // An array holding answers
     let answers: [String] = [
         "14",
         "Montpelier",
         "Grapes"
     ]
-    
     // the current question index
     var currentQuestionIndex: Int = 0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        questionLabel.text = questions[currentQuestionIndex]
+        currentQuestionLabel.text = questions[currentQuestionIndex]
+        print("did load")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Set the question's label initial alpha
+        nextQuestionLabel.alpha = 0
+        print("will appear")
     }
     
     // MARK: Private methods
@@ -41,14 +50,30 @@ class ViewController: UIViewController {
         currentQuestionIndex = (currentQuestionIndex == questions.count - 1) ? 0 : (currentQuestionIndex + 1)
         
         let question = questions[currentQuestionIndex]
-        questionLabel.text = question
+        nextQuestionLabel.text = question
         answerLabel.text = "???"
+        
+        animateLabelTransitions()
     }
     
     @IBAction func showAnswer(_ sender: UIButton) {
         let answer = answers[currentQuestionIndex]
         answerLabel.text = answer
         
+    }
+    
+    // A method handles the animations
+    func animateLabelTransitions() {
+        // Animate the alpha
+        UIView.animate(withDuration: 0.5, delay: 0, options: [],
+                    animations: {
+                        self.currentQuestionLabel.alpha = 0
+                        self.nextQuestionLabel.alpha = 1
+                    },
+                    completion: { _ in
+                        swap(&self.currentQuestionLabel, &self.nextQuestionLabel)
+                    })
+        print("animating")
     }
 }
 
