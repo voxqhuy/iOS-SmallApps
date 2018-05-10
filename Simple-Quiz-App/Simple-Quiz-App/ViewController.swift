@@ -10,7 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet var currentQuestionLabel: UILabel!
+    @IBOutlet weak var currentQuestionLabelCenterXConstraint: NSLayoutConstraint!
     @IBOutlet var nextQuestionLabel: UILabel!
+    @IBOutlet weak var nextQuestionLabelCenterXConstraint: NSLayoutConstraint!
     @IBOutlet var answerLabel: UILabel!
     
     // MARK: Properties
@@ -34,6 +36,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         currentQuestionLabel.text = questions[currentQuestionIndex]
         print("did load")
+        
+        updateOffScreenLabel()
+    }
+    
+    func updateOffScreenLabel() {
+        let screenWidth = view.frame.width
+        nextQuestionLabelCenterXConstraint.constant = -screenWidth
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,13 +74,24 @@ class ViewController: UIViewController {
     // A method handles the animations
     func animateLabelTransitions() {
         // Animate the alpha
+        // and the center X constraints
+        let screenWidth = view.frame.width
+        self.nextQuestionLabelCenterXConstraint.constant = 0
+        self.currentQuestionLabelCenterXConstraint.constant = +screenWidth
+        
         UIView.animate(withDuration: 0.5, delay: 0, options: [],
                     animations: {
                         self.currentQuestionLabel.alpha = 0
                         self.nextQuestionLabel.alpha = 1
+                        // lay out parent's subviews based on the latest constraints
+                        self.view.layoutIfNeeded()
                     },
                     completion: { _ in
+                        // swap the current question and next question's positions
                         swap(&self.currentQuestionLabel, &self.nextQuestionLabel)
+                        swap(&self.currentQuestionLabelCenterXConstraint, &self.nextQuestionLabelCenterXConstraint)
+                        
+                        self.updateOffScreenLabel()
                     })
         print("animating")
     }
