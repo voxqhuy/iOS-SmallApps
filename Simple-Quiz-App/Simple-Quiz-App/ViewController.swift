@@ -31,18 +31,12 @@ class ViewController: UIViewController {
     // the current question index
     var currentQuestionIndex: Int = 0
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         currentQuestionLabel.text = questions[currentQuestionIndex]
         print("did load")
-        
         updateOffScreenLabel()
-    }
-    
-    func updateOffScreenLabel() {
-        let screenWidth = view.frame.width
-        nextQuestionLabelCenterXConstraint.constant = -screenWidth
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,28 +65,40 @@ class ViewController: UIViewController {
         
     }
     
+    func updateOffScreenLabel() {
+        let screenWidth = view.frame.width
+        nextQuestionLabelCenterXConstraint.constant = -screenWidth
+    }
+    
     // A method handles the animations
     func animateLabelTransitions() {
+        
+        // Force any outstanding layout changes to occur
+        view.layoutIfNeeded()
+        
         // Animate the alpha
         // and the center X constraints
         let screenWidth = view.frame.width
         self.nextQuestionLabelCenterXConstraint.constant = 0
-        self.currentQuestionLabelCenterXConstraint.constant = +screenWidth
+        self.currentQuestionLabelCenterXConstraint.constant += screenWidth
         
-        UIView.animate(withDuration: 0.5, delay: 0, options: [],
-                    animations: {
+        UIView.animate(withDuration: 0.5, delay: 0,
+                       usingSpringWithDamping: 0.75,
+                       initialSpringVelocity: 5,
+                       options: [],
+                       animations: {
                         self.currentQuestionLabel.alpha = 0
                         self.nextQuestionLabel.alpha = 1
                         // lay out parent's subviews based on the latest constraints
                         self.view.layoutIfNeeded()
-                    },
-                    completion: { _ in
+                        },
+                       completion: { _ in
                         // swap the current question and next question's positions
                         swap(&self.currentQuestionLabel, &self.nextQuestionLabel)
                         swap(&self.currentQuestionLabelCenterXConstraint, &self.nextQuestionLabelCenterXConstraint)
-                        
                         self.updateOffScreenLabel()
-                    })
+                        })
+
         print("animating")
     }
 }
