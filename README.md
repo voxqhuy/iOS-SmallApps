@@ -43,8 +43,7 @@ Features:
 - The user then can edit the meal, like changing the name, picture or rating
 - If the user changes his mind, the meals are always deletable
 
-<img src="https://media.giphy.com/media/1msH9vpIFmSlqQ1BCm/giphy.gif" width="40" height="40" />
-![Alt Text](https://media.giphy.com/media/1msH9vpIFmSlqQ1BCm/giphy.gif)
+<img src="https://media.giphy.com/media/fMAaEaBH3e98sGPGEf/giphy.gif" />
 
 # Meme Maker
 
