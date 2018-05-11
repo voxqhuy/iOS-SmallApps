@@ -37,17 +37,13 @@ Description
 
 A food tracker that helps  keep track of meals everytime you find a tasty one
 The user can add more meals, along with a picture and rating
-??
-Adding a new meal
-??
-Choosing a picture from the local library
-?? 
-The meal is added
-?? 
-The user then can edit the meal, like changing the name, picture or rating
-??
-If the user changes his mind, the meals are always deletable
+Features:
+- Adding a new meal
+- Choosing a picture from the local library
+- The user then can edit the meal, like changing the name, picture or rating
+- If the user changes his mind, the meals are always deletable
 
+<img src="https://media.giphy.com/media/fMAaEaBH3e98sGPGEf/giphy.gif" />
 
 # Meme Maker
 
@@ -98,8 +94,9 @@ A simple element quiz
 2 buttons:
 'Show Answer' will show the answer
 'Next Element' will move to the next question (change the icon + question + answer)
+using ANIMATION for question label
 
-???
+![Alt Text](https://media.giphy.com/media/SiGIm2Dm7zSlEqRarM/giphy.gif)
 
 
 
