@@ -15,6 +15,18 @@ class DrawView: UIView {
     var currentLines = [NSValue: Line]()
     var finishedLines = [Line]()
     
+    // MARK: - intializer and serialization
+    required init?(coder aDecoder: NSCoder) {
+        // calling the superclass decoder
+        super.init(coder: aDecoder)
+        
+        let doubleTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(DrawView.doubleTap(_:)))
+        // Set the number of taps to be recognized
+        doubleTapRecognizer.numberOfTapsRequired = 2
+        // Attach a gesture recognizer to it
+        addGestureRecognizer(doubleTapRecognizer)
+    }
+    
     // MARK: colors
     @IBInspectable var finishedLineColor: UIColor = UIColor.black {
         didSet {
@@ -32,6 +44,17 @@ class DrawView: UIView {
         didSet {
             setNeedsDisplay()
         }
+    }
+    
+    // MARK: - Gesture Recognizer
+    @objc func doubleTap(_ gestureRecognizer: UIGestureRecognizer) {
+        print("Recognized a double tap")
+        
+        currentLines.removeAll()
+        finishedLines.removeAll()
+        
+        // flag the view to redraw
+        setNeedsDisplay()
     }
     
     // MARK: - Drawing methods
@@ -116,13 +139,5 @@ class DrawView: UIView {
             stroke(line)
         }
     }
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
 
 }
