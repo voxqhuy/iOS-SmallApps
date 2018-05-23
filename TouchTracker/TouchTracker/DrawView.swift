@@ -65,7 +65,7 @@ class DrawView: UIView {
         setNeedsDisplay()
     }
     
-    // tell the responser whn one or more touches associated with an event changed
+    // tell the responser when one or more touches associated with an event changed
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         print(#function)
         
