@@ -12,6 +12,9 @@ import CoreGraphics
 struct Line {
     var begin = CGPoint.zero
     var end = CGPoint.zero
+    var width: CGFloat = 10
+    var lineColor: UIColor = .black
+    
 }
 
 extension Line {
