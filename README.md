@@ -9,7 +9,8 @@ Description
 
 click on a button (icon) will make a different sound and text for the animal
 
-<img src="Screenshots/AnimalSounds1.png" height="448" width="228"> => interaction: <img src="Screenshots/AnimalSound2.png" height="448" width="228"> <img src="Screenshots/AnimalSounds3.png" height="448" width="228">
+<img src="https://media.giphy.com/media/LwH8f8ykGoNcOcpRkb/giphy.gif" />
+
 
 
 # Color Picker
@@ -66,7 +67,8 @@ When the user wins, the background turns GREEN
               loses, the background turns RED
 When the game is a tie, it is in light GRAY
 
-<img src="Screenshots/RockPaperScissors1.png" height="448" width="228"> => interaction: <img src="Screenshots/RockPaperScissors2.png" height="448" width="228"> <img src="Screenshots/RockPaperScissors3.png" height="448" width="228">
+<img src="https://media.giphy.com/media/TIzjQ7mggS18zWY6J5/giphy.gif" />
+
 
 
 # Simple Adaptive UI
