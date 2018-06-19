@@ -12,16 +12,22 @@ class ViewController: UITableViewController {
 
     var urlString = String()
     var dataSource = WebDataSource()
+    var petitionAPI = PetitionAPI()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = dataSource
         urlString = navigationController?.tabBarItem.tag == 0 ? PetitionAPI.recentURLString : PetitionAPI.topRatedURLString
-        if let petitionData = PetitionAPI.fetchPetitions(forURL: urlString) {
-            dataSource.petitions = petitionData
-        } else {
-            showError()
+        PetitionAPI.fetchPetitions(forURL: urlString) {
+            (petitionResult) in
+            
+            switch petitionResult {
+            case let .success(petitions):
+                self.dataSource.petitions = petitions
+            case .failure:
+                self.showError()
+            }
         }
         
         tableView.reloadData()
