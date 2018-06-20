@@ -10,11 +10,23 @@ import UIKit
 
 class ViewController: UICollectionViewController {
     
+    
     var peopleData = PeopleData()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let defaults = UserDefaults.standard
+        if let savedPeople = defaults.object(forKey: "people") as? Data {
+            let jsonDecoder = JSONDecoder()
+            
+            do {
+                peopleData.people = try jsonDecoder.decode([Person].self, from: savedPeople)
+            } catch {
+                print("Failed to load people")
+            }
+//            peopleData.people = NSKeyedUnarchiver.unarchiveObject(with: people) as! [Person]
+        }
         collectionView?.dataSource = peopleData
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPerson))
     }
@@ -41,6 +53,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         let person = Person(name: "Unknown", image: imageName)
         peopleData.people.append(person)
         collectionView?.reloadData()
+        save()
         
         dismiss(animated: true)
     }
@@ -56,6 +69,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             
             person.name = ac.textFields![0].text!
             self.collectionView?.reloadData()
+            self.save()
         })
         
         present(ac, animated: true)
@@ -75,5 +89,16 @@ extension ViewController {
 
 // MARK: - Helper methods
 extension ViewController {
-
+    func save() {
+        let jsonEncoder = JSONEncoder()
+        if let savedData = try? jsonEncoder.encode(peopleData.people) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: "people")
+        } else {
+            print("Failed to save people.")
+        }
+//        let savedData = NSKeyedArchiver.archivedData(withRootObject: peopleData.people)
+//        let defaults = UserDefaults.standard
+//        defaults.set(savedData, forKey: "people")
+    }
 }
