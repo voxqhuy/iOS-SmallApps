@@ -112,18 +112,18 @@ extension ViewController {
         
         if letterBits.count == letterButtons.count {
             for i in 0 ..< letterBits.count {
-                letterButtons[i].setTitle(letterBits[i], for: .normal)
+                 letterButtons[i].setTitle(letterBits[i], for: .normal)
             }
         }
         
         for btn in letterButtons {
-            btn.isEnabled = true
+            btn.alpha = 1
         }
     }
     
     func reShowButtons() {
         for btn in activatedButtons {
-            btn.isHidden = false
+            btn.alpha = 1
         }
     }
     
@@ -149,14 +149,22 @@ extension ViewController {
         }
         
         currentAnswer.text = currentAnswer.text! + btn.titleLabel!.text!
-        btn.isHidden = true
+        UIView.animate(withDuration: 1,
+                       delay: 0,
+                       options: [],
+                       animations: {
+//            [unowned self] in
+                        btn.alpha = 0
+                        },
+                       completion: nil)
+//        btn.isHidden = true
         activatedButtons.append(btn)
         
         attempts += 1
     }
 }
 
-// MARK: Helper methods
+// MARK: - Helper methods
 extension ViewController {
     
     func alertRightAnswer() {
