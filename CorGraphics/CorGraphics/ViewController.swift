@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     @IBAction func redrawTapped(_ sender: UIButton) {
         currentDrawType += 1
         
-        if currentDrawType > 5 {
+        if currentDrawType > 7 {
             currentDrawType = 0
         }
         
@@ -43,6 +43,10 @@ class ViewController: UIViewController {
             drawLines()
         case 5:
             drawImagesAndText()
+        case 6:
+            drawCircleCheckerBoard()
+        case 7:
+            drawRotatedSquaress()
         default:
             break
         }
@@ -169,6 +173,50 @@ extension ViewController {
             
             let mouse = UIImage(named: "mouse")
             mouse?.draw(at: CGPoint(x: 300, y: 150))
+        }
+        
+        imageView.image = img
+    }
+    
+    func drawCircleCheckerBoard() {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
+        
+        let img = renderer.image {
+            ctx in
+            ctx.cgContext.setFillColor(UIColor.black.cgColor)
+            
+            for row in 0..<8 {
+                for col in 0..<8 {
+                    if (row + col) % 2 == 0 {
+                        let rectangle = CGRect(x: row * 64, y: col * 64, width: 64, height: 64)
+                        ctx.cgContext.addEllipse(in: rectangle)
+                        ctx.cgContext.drawPath(using: .fillStroke)
+                    }
+                }
+            }
+        }
+        
+        imageView.image = img
+    }
+    
+    func drawRotatedSquaress() {
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
+        
+        let img = renderer.image {
+            ctx in
+            ctx.cgContext.translateBy(x: 458, y: 256)
+            
+            let rotations = 10
+            let amount = Double.pi / Double(rotations)
+            
+            for _ in 0..<(rotations * 2) {
+                ctx.cgContext.rotate(by: CGFloat(amount))
+                ctx.cgContext.translateBy(x: 0, y: 60)
+                ctx.cgContext.addRect(CGRect(x: -35, y: -35, width: 70, height: 70))
+            }
+            
+            ctx.cgContext.setStrokeColor(UIColor.black.cgColor)
+            ctx.cgContext.strokePath()
         }
         
         imageView.image = img
