@@ -127,7 +127,7 @@ extension ViewController {
     }
     
     func createPassword(with password: String) {
-        _ = KeychainWrapper.standard.set(password.text!, forKey: "Password")
+        _ = KeychainWrapper.standard.set(password, forKey: "Password")
         let ac = UIAlertController(title: "Password created", message: "You created a new password", preferredStyle: .alert)
         ac.addAction((UIAlertAction(title: "OK", style: .default)))
         present(ac, animated: true)
