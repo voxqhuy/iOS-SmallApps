@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreSpotlight
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -41,6 +42,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+        if userActivity.activityType == CSSearchableItemActionType {
+            if let uniqueIndentifier = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String {
+                if let navigationController = window?.rootViewController as? UINavigationController {
+                    if let viewController = navigationController.topViewController as? ViewController {
+                        viewController.showTutorial(Int(uniqueIndentifier)!)
+                    }
+                }
+            }
+        }
+        
+        return true
+    }
 }
 

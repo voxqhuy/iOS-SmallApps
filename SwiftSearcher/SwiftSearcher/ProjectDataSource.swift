@@ -10,6 +10,7 @@ import UIKit
 
 class ProjectDataSource: NSObject {
     var projects: [[String]]
+    var favorites = [Int]()
     
     override init() {
         projects = []
@@ -37,9 +38,32 @@ extension ProjectDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        let project = projects[indexPath.row] as! [String]
+        let project = projects[indexPath.row]
         cell.textLabel!.attributedText = Helper.makeAttributedString(title: project[0], subtitle: project[1])
         
+        if favorites.contains(indexPath.row) {
+            cell.editingAccessoryType = .checkmark
+        } else {
+            cell.editingAccessoryType = .none
+        }
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .insert {
+            favorites.append(indexPath.row)
+            TableViewHelper.index(item: indexPath.row, project: projects[indexPath.row])
+        } else {
+            if let index = favorites.index(of: indexPath.row) {
+                favorites.remove(at: index)
+                TableViewHelper.deindex(item: indexPath.row, project: projects[indexPath.row])
+            }
+        }
+        
+        let defaults = UserDefaults.standard
+        defaults.set(favorites, forKey: "favorites")
+        
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
 }
